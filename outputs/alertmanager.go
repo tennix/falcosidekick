@@ -32,6 +32,7 @@ func newAlertmanagerPayload(falcopayload types.FalcoPayload) []alertmanagerPaylo
 	}
 	amPayload.Labels["source"] = "falco"
 	amPayload.Labels["rule"] = falcopayload.Rule
+	amPayload.Labels["priority"] = falcopayload.Priority
 
 	amPayload.Annotations["info"] = falcopayload.Output
 	amPayload.Annotations["summary"] = falcopayload.Rule
